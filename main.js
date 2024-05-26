@@ -5,6 +5,12 @@ let messageHeading = document.getElementById("messageHeading")
 const ageCal = () => {
 
     let ageValue = inputField.value;
+
+    if(ageValue === "" || ageValue === " ") {
+        messageHeading.innerHTML = `<span class="text-danger">Please enter your date of birth!</span>`;
+        return;
+    }
+
     let ageValueDate = new Date(ageValue);
 
     if (isNaN(ageValueDate.getTime())) {
